@@ -33,3 +33,64 @@ form{
     max-width: 730px;
     padding: 64px;
 }
+form h1{
+    font-size: 36px;
+}
+form fieldset{
+    border: 0;
+    margin-top: 64px;
+}
+form legend{
+    margin-bottom: 40px;
+}
+form legend h2{
+    font-size: 24px;
+}
+form .field{
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+
+    margin-bottom: 24px;
+}
+form .field-group{
+    display: flex;
+}
+
+form input, form select{
+    background-color: #f0f0f5;
+    border: 0;
+    font-size: 16px;
+    padding: 16px 24px;
+}
+
+form select{
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+}
+
+form label{
+    font-size: 14px;
+    margin-bottom: 8px;
+}
+
+form .field-group .field + .field{
+    margin-left: 24px;
+}
+
+form button{
+    background: var(--primary-color);
+    border: 0;
+    border-radius: 8px;
+    color: white;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+    height: 56px;
+    transition: background-color 400ms;
+    width: 260px;
+}
+form button:hover{
+    background-color: #2fb86e;
+}
