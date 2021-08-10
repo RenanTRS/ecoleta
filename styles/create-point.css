@@ -90,6 +90,7 @@ form button{
     height: 56px;
     transition: background-color 400ms;
     width: 260px;
+    margin-top: 3rem;
 }
 form button:hover{
     background-color: #2fb86e;

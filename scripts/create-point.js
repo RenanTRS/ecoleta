@@ -39,9 +39,37 @@ const itensToSelect = document.querySelectorAll('.itens-grid li');
 for (const item of itensToSelect){
     item.addEventListener('click', handleSelectedItem);
 }
+
+const collectedItens = document.querySelector('input[name=itens');
+
+let selectedItens = [];
 function handleSelectedItem(event){
     const itemLi = event.target;
-    itemLi.classList.toggle('selected')
+    itemLi.classList.toggle('selected');
     const itemId = itemLi.dataset.id;
-    console.log();
+
+    //Verificar se tem itens selecionados, se sim
+    //Pegar os itens selecionados
+    
+    const allreadySelected = selectedItens.findIndex((item)=>{
+        const itemFound = item == itemId;
+        
+        return itemFound;
+    });
+    //Se já estiver selecionado.
+    if(allreadySelected >= 0){
+        // tirar da seleção
+        const filteredItens = selectedItens.filter((item)=>{
+            const itemIsDifferent = item != itemId;
+
+            return itemIsDifferent;
+        });
+
+        selectedItens = filteredItens;
+    } else {
+        //Se não estiver selecionado, adicionar à seleção
+        selectedItens.push(itemId);
+    }
+    //Atualizar o campo escondido com os itens selecionados
+    collectedItens.value = selectedItens;
 }
