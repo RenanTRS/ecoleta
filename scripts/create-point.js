@@ -34,3 +34,14 @@ function getCities(event){
 }
 
 document.querySelector("select[name=uf]").addEventListener("change", getCities);
+
+const itensToSelect = document.querySelectorAll('.itens-grid li');
+for (const item of itensToSelect){
+    item.addEventListener('click', handleSelectedItem);
+}
+function handleSelectedItem(event){
+    const itemLi = event.target;
+    itemLi.classList.toggle('selected')
+    const itemId = itemLi.dataset.id;
+    console.log();
+}
