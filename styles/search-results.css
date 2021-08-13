@@ -75,6 +75,7 @@ main .card p{
 }
 
 body::after{
+    content: "";
     background: white;
     position: fixed;
     top: 260px;
