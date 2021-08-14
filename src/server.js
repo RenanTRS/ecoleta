@@ -18,4 +18,4 @@ server.get("/search", (req, res)=>{
     res.sendFile(__dirname + "/views/search-results.html");
 });
 //ligar o servidor
-server.listen(3000);
+server.listen(4000);
