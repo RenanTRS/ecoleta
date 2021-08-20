@@ -11,12 +11,13 @@
     {% block content %}
     {% include "partials/page-header.html" %}
     <main>
-        <h4>
-            <strong>2 pontos</strong> encontrados
-        </h4>
-
-        <div class="cards">
-            {% for place in places%}
+        {% if total > 0 %}
+            <h4>
+                <strong>{{total}} pontos</strong> encontrados
+            </h4>
+            
+            <div class="cards">
+                {% for place in places%}
                 <!--Bloco de repetição do nunjucks-->
                 <div class="card">
                     <img src="{{place.image}}" alt="{{place.name}}">
@@ -28,8 +29,11 @@
                         {{place.address2}}
                     </p>
                 </div>
-            {% endfor %}
-        </div>
+                {% endfor %}
+            </div>
+            {% else %}
+                <h4><strong>Nenhum</strong> local encontrado</h4>
+        {% endif %}
     </main>
     {% endblock content %}
 </body>
