@@ -27,8 +27,14 @@ server.get("/create-point", (req, res)=>{
     return res.render("create-point.html"); //Com nunjucks
 });
 server.get("/search", (req, res)=>{
-    //res.sendFile(__dirname + "/views/search-results.html"); //Sem nunjucks
-    return res.render("search-results.html"); //Com nunjucks
+    //pegar os dados do banco de dados
+    db.all(`SELECT * FROM places`, function(err, rows){
+        if(err){
+            return console.log(err);
+        }
+        //mostra a página html com os dados do banco de dados.
+        return res.render("search-results.html", {places: rows}); 
+    });
 });
 //ligar o servidor
 server.listen(5500);
