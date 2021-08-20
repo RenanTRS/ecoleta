@@ -29,8 +29,7 @@ server.get("/create-point", (req, res)=>{
     return res.render("create-point.html"); //Com nunjucks
 });
 server.post("/savepoint", (req, res)=>{
-    //Vai pegar os dados do /create-point
-    //console.log(req.body);
+    //Vai pegar os dados do /create-point via post
     //Inserindo dados na tabela
     const query = `
         INSERT INTO places (
