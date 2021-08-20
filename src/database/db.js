@@ -69,3 +69,4 @@ db.serialize(()=>{
         console.log("Registro deletado com sucesso!");
     });
 })*/
+module.exports = db;
