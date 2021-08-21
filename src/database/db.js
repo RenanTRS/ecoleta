@@ -64,12 +64,13 @@ db.serialize(()=>{
     //Deletar um dado da tabela
     
     db.run(`DELETE FROM places WHERE id = ?`, [3], function(err){
-        if(err){
-            return console.log(err);
-        }
-        console.log("Registro deletado com sucesso!");
+        //db.run(`DELETE FROM places`, function(err){
+            if(err){
+                return console.log(err);
+            }
+            console.log("Registro deletado com sucesso!");
+        });
     });
-});
 */
-
+    
 module.exports = db;
