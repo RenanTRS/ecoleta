@@ -23,7 +23,7 @@ nunjucks.configure("src/views", {
 //res: resposta
 server.get("/", (req, res)=>{
     //res.sendFile(__dirname + "/views/index.html"); //Sem nunjucks
-    return res.render("index.html", {title: "Alguma coisa aqui"}); //Com nunjucks
+    return res.render("index.html"); //Com nunjucks
 });
 server.get("/create-point", (req, res)=>{
     return res.render("create-point.html"); //Com nunjucks
@@ -55,7 +55,7 @@ server.post("/savepoint", (req, res)=>{
         if(err){
             return console.log(err);
         }
-        return res.send("ok");
+        return res.render("create-point.html", {saved: true});
     }
     db.run(query, values, afterInsertData);
 });
