@@ -48,6 +48,8 @@ function handleSelectedItem(event){
     itemLi.classList.toggle('selected');
     const itemId = itemLi.dataset.id;
 
+    
+
     //Verificar se tem itens selecionados, se sim
     //Pegar os itens selecionados
     
@@ -56,6 +58,7 @@ function handleSelectedItem(event){
         
         return itemFound;
     });
+    
     //Se já estiver selecionado.
     if(allreadySelected >= 0){
         // tirar da seleção
